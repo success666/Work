@@ -18,6 +18,8 @@
 ## 开始
 ![](./img/action.png)
 
+     - vue init webpack vuedemo 与 vue init webpack-simple simple-vuedemo的区别
+
 ```
     $ vue init webpack vue dome 
 ```
@@ -27,7 +29,6 @@
 
 [webpack-simple项目目录](https://github.com/success666/vueProject "webpack-simple项目目录")
 
-    - vue init webpack vuedemo 与 vue init webpack-simple simple-vuedemo的区别
 
 ```
     $ vue init webpack-simple simple-vuedemo
