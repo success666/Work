@@ -7,8 +7,6 @@
 
 - 做Vue项目，搭建环境避免不了。一开始学习的时候，还是先学webpack的基本知识，一步一步配置入口文件等等.命令vue init webpack有两种版本，一个simple版vue init webpack-simple，simple版不带eslink语法检查、单元测试；vue init webpack带全功能
 
-    - vue init webpack vuedemo 与 vue init webpack-simple simple-vuedemo的区别
-
     - browserify--全功能的Browserify + vueify，包括热加载，静态检测，单元测试
 
     - browserify-simple--一个简易的Browserify + vueify，以便于快速开始。
@@ -28,6 +26,8 @@
 ![](./img/webpack-catalogue.png)
 
 [webpack-simple项目目录](https://github.com/success666/vueProject "webpack-simple项目目录")
+
+    - vue init webpack vuedemo 与 vue init webpack-simple simple-vuedemo的区别
 
 ```
     $ vue init webpack-simple simple-vuedemo
