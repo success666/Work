@@ -27,7 +27,7 @@
 
 ![](./img/webpack-catalogue.png)
 
-[webpack-simple项目目录](https://github.com/success666/vueProject "webpack-simple项目目录")
+[webpack项目目录](https://github.com/success666/Work/tree/master/vuedemo "webpack-simple项目目录")
 
 
 ```
