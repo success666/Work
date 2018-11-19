@@ -21,7 +21,7 @@
      - vue init webpack vuedemo 与 vue init webpack-simple simple-vuedemo的区别
 
 ```
-    $ vue init webpack vue dome 
+    $ vue init webpack dome 
 ```
 ![](./img/webpack.png)
 
