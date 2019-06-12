@@ -119,6 +119,67 @@ export default {
 </script>
 ```
 
+### vue项目刷新当前页面
+- 1.this.$router.go(0)。这种方法虽然代码很少，只有一行，但是体验很差。页面会一瞬间的白屏，体验不是很好
+- 2.用vue-router重新路由到当前页面，页面是不进行刷新的。
+- 3.location.reload()。这种也是一样，画面一闪，体验不是很好
+
+#### 推荐解决方法：
+用provide / inject 组合
+原理：允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效
+在App.vue,声明reload方法，控制router-view的显示或隐藏，从而控制页面的再次加载。
+
+```
+<template>
+  <div id="app">
+    <router-view v-if="isRouterAlive"></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
+  data () {
+    return {
+      isRouterAlive: true
+    }
+  },
+  methods: {
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(function () {
+        this.isRouterAlive = true
+      })
+    }
+  }
+}
+</script>
+```
+
+在需要用到刷新的页面。在页面注入App.vue组件提供（provide）的 reload 依赖，在逻辑完成之后（删除或添加...）,直接this.reload()调用，即可刷新当前页面。
+注入reload方法
+```
+  export default {
+  name: 'details',
+  inject:['reload'],
+  data () {
+    return {
+    }
+  },
+  methods: {
+    refresh () {
+       this.reload()//调用
+    }
+  }
+}
+</script>
+```
+
 ### token解析 - base64解码
 ```
     let tokenObj = decodeURIComponent(atob(token).split('').map(function(c) {
